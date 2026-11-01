@@ -1,5 +1,6 @@
+
 const STORAGE_KEY = "neurocore_v4_records";
-const AI_API_URL = "https://odd-cake-4256neurocore-ai-engine.zkj789.workers.dev/"; // Cloudflare Worker Gemini backend
+const AI_API_URL = "https://odd-cake-4256neurocore-ai-engine.zkj789.workers.dev/";
 
 let records = [];
 try {
@@ -13,115 +14,61 @@ const $ = id => document.getElementById(id);
 
 const translations = {
   en: {
-    subtitle:"INTELLIGENCE ENGINE",
-    systemOnline:"SYSTEM ONLINE",
-    mainMenu:"MAIN MENU",
-    dashboard:"Dashboard",
-    workflowAnalysis:"Workflow Analysis",
-    videoCenter:"IT Video Center",
-    reports:"Reports",
-    riskMonitoring:"Risk Monitoring",
-    engineActive:"ENGINE ACTIVE",
-    workspace:"INTELLIGENCE WORKSPACE",
-    overview:"Overview",
-    liveSystem:"LIVE SYSTEM",
-    intelligencePlatform:"WORKFLOW INTELLIGENCE PLATFORM",
-    heroTitle:"Understand. Analyze. Optimize.",
+    subtitle:"INTELLIGENCE ENGINE",systemOnline:"SYSTEM ONLINE",mainMenu:"MAIN MENU",
+    dashboard:"Dashboard",workflowAnalysis:"Workflow Analysis",videoCenter:"IT Video Center",
+    reports:"Reports",riskMonitoring:"Risk Monitoring",engineActive:"ENGINE ACTIVE",
+    workspace:"INTELLIGENCE WORKSPACE",overview:"Overview",liveSystem:"LIVE SYSTEM",
+    intelligencePlatform:"WORKFLOW INTELLIGENCE PLATFORM",heroTitle:"Understand. Analyze. Optimize.",
     heroDescription:"Analyze operational workflows, identify risks and discover opportunities for smarter work.",
-    startAnalysis:"Start Workflow Analysis →",
-    systemOverview:"SYSTEM OVERVIEW",
-    performanceMetrics:"Performance Metrics",
-    updatedLive:"● UPDATED LIVE",
-    totalAnalyses:"Total Analyses",
-    allRecords:"All saved records",
-    aiAssistedTasks:"AI-Assisted Tasks",
-    aiRelatedMatches:"AI-related matches",
-    automationTasks:"Automation Tasks",
-    automationMatches:"Automation-related matches",
-    highRiskTasks:"High Risk Tasks",
-    riskDetected:"High-risk records",
-    quickAction:"QUICK ACTION",
-    analyzeWorkflow:"Analyze a Workflow",
+    startAnalysis:"Start Workflow Analysis →",systemOverview:"SYSTEM OVERVIEW",
+    performanceMetrics:"Performance Metrics",updatedLive:"● UPDATED LIVE",
+    totalAnalyses:"Total Analyses",allRecords:"All saved records",
+    aiAssistedTasks:"AI-Assisted Tasks",aiRelatedMatches:"AI-related matches",
+    automationTasks:"Automation Tasks",automationMatches:"Automation-related matches",
+    highRiskTasks:"High Risk Tasks",riskDetected:"High-risk records",
+    quickAction:"QUICK ACTION",analyzeWorkflow:"Analyze a Workflow",
     quickActionDescription:"Submit a work process to evaluate its category, risk level and improvement opportunities.",
-    openAnalyzer:"Open Analyzer →",
-    learningHub:"LEARNING HUB",
+    openAnalyzer:"Open Analyzer →",learningHub:"LEARNING HUB",
     itLearningCenter:"IT Learning Center",
     learningDescription:"Explore IT support, networking, cybersecurity and technology tutorials.",
-    exploreVideos:"Explore Videos →",
-    analysisModule:"INTELLIGENCE MODULE / 01",
+    exploreVideos:"Explore Videos →",analysisModule:"INTELLIGENCE MODULE / 01",
     analysisDescription:"Describe a workflow to analyze its operations, risks and improvement opportunities.",
     workflowDescription:"Describe Your Workflow",
     workflowPlaceholder:"Example: Our IT department receives support requests through email...",
-    analyzeWorkflowBtn:"◈ Analyze Workflow",
-    loadSample:"Load Sample",
-    clear:"Clear",
-    processing:"Analyzing workflow...",
-    analysisOutput:"ANALYSIS OUTPUT",
-    intelligenceReport:"Intelligence Report",
-    completed:"COMPLETED",
-    category:"CATEGORY",
-    riskLevel:"RISK LEVEL",
-    aiMatches:"AI MATCHES",
-    executionPriority:"EXECUTION PRIORITY",
-    recommendations:"Recommendations",
-    aiInsights:"AI Insights",
-    learningModule:"LEARNING MODULE / 02",
+    analyzeWorkflowBtn:"◈ Analyze Workflow",loadSample:"Load Sample",clear:"Clear",
+    processing:"Analyzing workflow...",analysisOutput:"ANALYSIS OUTPUT",
+    intelligenceReport:"Intelligence Report",completed:"COMPLETED",
+    category:"CATEGORY",riskLevel:"RISK LEVEL",aiMatches:"AI MATCHES",
+    executionPriority:"EXECUTION PRIORITY",recommendations:"Recommendations",
+    aiInsights:"AI Insights",learningModule:"LEARNING MODULE / 02",
     videoDescription:"Learn practical IT skills through selected video tutorials.",
-    selectTutorial:"Select a Tutorial",
-    videoPlaceholder:"Choose a learning video from the gallery below.",
-    videoPlayer:"Video Player",
-    chooseVideo:"Choose a tutorial to start learning.",
-    tutorialLibrary:"Tutorial Library",
-    learningVideos:"LEARNING VIDEOS",
-    itSupport:"IT SUPPORT",
-    itSupportTutorial:"IT Support Fundamentals",
-    networking:"NETWORKING",
-    networkingTutorial:"Networking Basics",
-    cybersecurity:"CYBERSECURITY",
-    cybersecurityTutorial:"Cybersecurity Awareness",
-    troubleshooting:"TROUBLESHOOTING",
-    troubleshootingTutorial:"Computer Troubleshooting",
-    watchTutorial:"Watch Tutorial →",
-    reportModule:"REPORTING MODULE / 03",
+    selectTutorial:"Select a Tutorial",videoPlaceholder:"Choose a learning video from the gallery below.",
+    videoPlayer:"Video Player",chooseVideo:"Choose a tutorial to start learning.",
+    tutorialLibrary:"Tutorial Library",learningVideos:"LEARNING VIDEOS",
+    itSupport:"IT SUPPORT",itSupportTutorial:"IT Support Fundamentals",
+    networking:"NETWORKING",networkingTutorial:"Networking Basics",
+    cybersecurity:"CYBERSECURITY",cybersecurityTutorial:"Cybersecurity Awareness",
+    troubleshooting:"TROUBLESHOOTING",troubleshootingTutorial:"Computer Troubleshooting",
+    watchTutorial:"Watch Tutorial →",reportModule:"REPORTING MODULE / 03",
     reportsDescription:"Review saved workflow analyses and export your records.",
-    savedRecords:"SAVED RECORDS",
-    analysisHistory:"Analysis History",
-    exportCsv:"↓ Export CSV",
-    date:"DATE",
-    workflow:"WORKFLOW",
-    risk:"RISK",
-    priority:"PRIORITY",
-    noReports:"No Reports Yet",
-    noReportsDescription:"Your workflow analysis records will appear here.",
-    createFirstReport:"Create Your First Report",
-    riskModule:"SECURITY MODULE / 04",
+    savedRecords:"SAVED RECORDS",analysisHistory:"Analysis History",exportCsv:"↓ Export CSV",
+    date:"DATE",workflow:"WORKFLOW",risk:"RISK",priority:"PRIORITY",
+    noReports:"No Reports Yet",noReportsDescription:"Your workflow analysis records will appear here.",
+    createFirstReport:"Create Your First Report",riskModule:"SECURITY MODULE / 04",
     riskDescription:"Monitor risk levels identified in your workflow analysis records.",
-    highRisk:"HIGH RISK",
-    mediumRisk:"MEDIUM RISK",
-    lowRisk:"LOW RISK",
-    monitoringLog:"MONITORING LOG",
-    riskActivity:"Risk Activity",
-    recordBased:"RECORD BASED",
-    noRiskRecords:"No Risk Records",
-    noRiskDescription:"Analyze a workflow to populate risk monitoring.",
-    prototypeNotice:"PORTFOLIO PROTOTYPE",
-    hybrid:"HYBRID WORKFLOW",
-    aiCategory:"AI WORKFLOW",
-    automationCategory:"AUTOMATION WORKFLOW",
-    itCategory:"IT SUPPORT",
-    generalCategory:"GENERAL WORKFLOW",
-    high:"HIGH",
-    medium:"MEDIUM",
-    low:"LOW",
-    urgent:"URGENT",
-    attention:"ATTENTION REQUIRED",
-    normal:"NORMAL",
+    highRisk:"HIGH RISK",mediumRisk:"MEDIUM RISK",lowRisk:"LOW RISK",
+    monitoringLog:"MONITORING LOG",riskActivity:"Risk Activity",recordBased:"RECORD BASED",
+    noRiskRecords:"No Risk Records",noRiskDescription:"Analyze a workflow to populate risk monitoring.",
+    prototypeNotice:"PORTFOLIO PROTOTYPE",hybrid:"HYBRID WORKFLOW",
+    aiCategory:"AI WORKFLOW",automationCategory:"AUTOMATION WORKFLOW",
+    itCategory:"IT SUPPORT",generalCategory:"GENERAL WORKFLOW",
+    high:"HIGH",medium:"MEDIUM",low:"LOW",urgent:"URGENT",
+    attention:"ATTENTION REQUIRED",normal:"NORMAL",
     recommendationHigh:"High operational risk indicators detected. Review security, access permissions and process controls before proceeding.",
     recommendationMedium:"Potential operational or data risks detected. Review procedures and safeguards.",
     recommendationLow:"No major risk indicators detected by this prototype. Continue routine monitoring.",
     emptyInput:"Please enter a workflow description first.",
-    saved:"Analysis completed and saved.",
-    exportEmpty:"There are no reports to export yet.",
+    saved:"Analysis completed and saved.",exportEmpty:"There are no reports to export yet.",
     videoError:"This video could not be loaded. Please try another tutorial.",
     localMode:"Local rule-based analysis",
     backendMissing:"Gemini AI backend is not connected. This result uses local rule-based analysis, not a real AI model.",
@@ -129,109 +76,60 @@ const translations = {
     aiError:"Gemini could not complete the analysis. Local rule-based results are still available. Error: "
   },
   ur: {
-    subtitle:"انٹیلیجنس انجن",
-    systemOnline:"سسٹم آن لائن",
-    mainMenu:"مرکزی مینو",
-    dashboard:"ڈیش بورڈ",
-    workflowAnalysis:"ورک فلو تجزیہ",
-    videoCenter:"آئی ٹی ویڈیو سینٹر",
-    reports:"رپورٹس",
-    riskMonitoring:"خطرات کی نگرانی",
-    engineActive:"انجن فعال ہے",
-    workspace:"انٹیلیجنس ورک اسپیس",
-    overview:"جائزہ",
-    liveSystem:"لائیو سسٹم",
+    subtitle:"انٹیلیجنس انجن",systemOnline:"سسٹم آن لائن",mainMenu:"مرکزی مینو",
+    dashboard:"ڈیش بورڈ",workflowAnalysis:"ورک فلو تجزیہ",videoCenter:"آئی ٹی ویڈیو سینٹر",
+    reports:"رپورٹس",riskMonitoring:"خطرات کی نگرانی",engineActive:"انجن فعال ہے",
+    workspace:"انٹیلیجنس ورک اسپیس",overview:"جائزہ",liveSystem:"لائیو سسٹم",
     intelligencePlatform:"ورک فلو انٹیلیجنس پلیٹ فارم",
     heroTitle:"سمجھیں۔ تجزیہ کریں۔ بہتر بنائیں۔",
     heroDescription:"کام کے طریقہ کار کا تجزیہ کریں، خطرات کی شناخت کریں اور بہتر کام کے مواقع تلاش کریں۔",
-    startAnalysis:"تجزیہ شروع کریں ←",
-    systemOverview:"سسٹم کا جائزہ",
-    performanceMetrics:"کارکردگی کے اعداد و شمار",
-    updatedLive:"● تازہ ترین معلومات",
-    totalAnalyses:"کل تجزیے",
-    allRecords:"تمام محفوظ ریکارڈ",
-    aiAssistedTasks:"اے آئی سے متعلق کام",
-    aiRelatedMatches:"اے آئی سے متعلق نتائج",
-    automationTasks:"آٹومیشن کے کام",
-    automationMatches:"آٹومیشن سے متعلق نتائج",
-    highRiskTasks:"زیادہ خطرے والے کام",
-    riskDetected:"زیادہ خطرے کے ریکارڈ",
-    quickAction:"فوری کارروائی",
-    analyzeWorkflow:"ورک فلو کا تجزیہ کریں",
+    startAnalysis:"تجزیہ شروع کریں ←",systemOverview:"سسٹم کا جائزہ",
+    performanceMetrics:"کارکردگی کے اعداد و شمار",updatedLive:"● تازہ ترین معلومات",
+    totalAnalyses:"کل تجزیے",allRecords:"تمام محفوظ ریکارڈ",
+    aiAssistedTasks:"اے آئی سے متعلق کام",aiRelatedMatches:"اے آئی سے متعلق نتائج",
+    automationTasks:"آٹومیشن کے کام",automationMatches:"آٹومیشن سے متعلق نتائج",
+    highRiskTasks:"زیادہ خطرے والے کام",riskDetected:"زیادہ خطرے کے ریکارڈ",
+    quickAction:"فوری کارروائی",analyzeWorkflow:"ورک فلو کا تجزیہ کریں",
     quickActionDescription:"کسی کام کی تفصیل درج کریں تاکہ اس کی قسم، خطرے اور بہتری کے مواقع کا جائزہ لیا جا سکے۔",
-    openAnalyzer:"تجزیہ کھولیں ←",
-    learningHub:"تعلیمی مرکز",
+    openAnalyzer:"تجزیہ کھولیں ←",learningHub:"تعلیمی مرکز",
     itLearningCenter:"آئی ٹی تعلیمی مرکز",
     learningDescription:"آئی ٹی سپورٹ، نیٹ ورکنگ، سائبر سکیورٹی اور ٹیکنالوجی کے اسباق دیکھیں۔",
-    exploreVideos:"ویڈیوز دیکھیں ←",
-    analysisModule:"انٹیلیجنس ماڈیول / 01",
+    exploreVideos:"ویڈیوز دیکھیں ←",analysisModule:"انٹیلیجنس ماڈیول / 01",
     analysisDescription:"ورک فلو کی تفصیل درج کریں تاکہ اس کے کام، خطرات اور بہتری کے مواقع کا تجزیہ کیا جا سکے۔",
     workflowDescription:"اپنے ورک فلو کی تفصیل لکھیں",
     workflowPlaceholder:"مثال: ہمارا آئی ٹی شعبہ ای میل کے ذریعے سپورٹ کی درخواستیں وصول کرتا ہے...",
-    analyzeWorkflowBtn:"◈ ورک فلو کا تجزیہ کریں",
-    loadSample:"مثال لوڈ کریں",
-    clear:"صاف کریں",
-    processing:"ورک فلو کا تجزیہ جاری ہے...",
-    analysisOutput:"تجزیے کا نتیجہ",
-    intelligenceReport:"انٹیلیجنس رپورٹ",
-    completed:"مکمل",
-    category:"قسم",
-    riskLevel:"خطرے کی سطح",
-    aiMatches:"اے آئی نتائج",
-    executionPriority:"ترجیح",
-    recommendations:"تجاویز",
-    aiInsights:"اے آئی بصیرت",
+    analyzeWorkflowBtn:"◈ ورک فلو کا تجزیہ کریں",loadSample:"مثال لوڈ کریں",
+    clear:"صاف کریں",processing:"ورک فلو کا تجزیہ جاری ہے...",
+    analysisOutput:"تجزیے کا نتیجہ",intelligenceReport:"انٹیلیجنس رپورٹ",
+    completed:"مکمل",category:"قسم",riskLevel:"خطرے کی سطح",
+    aiMatches:"اے آئی نتائج",executionPriority:"ترجیح",
+    recommendations:"تجاویز",aiInsights:"اے آئی بصیرت",
     learningModule:"تعلیمی ماڈیول / 02",
     videoDescription:"منتخب ویڈیو اسباق کے ذریعے عملی آئی ٹی مہارتیں سیکھیں۔",
-    selectTutorial:"سبق منتخب کریں",
-    videoPlaceholder:"نیچے دی گئی گیلری سے ویڈیو منتخب کریں۔",
-    videoPlayer:"ویڈیو پلیئر",
-    chooseVideo:"سیکھنے کے لیے کوئی سبق منتخب کریں۔",
-    tutorialLibrary:"اسباق کی لائبریری",
-    learningVideos:"تعلیمی ویڈیوز",
-    itSupport:"آئی ٹی سپورٹ",
-    itSupportTutorial:"آئی ٹی سپورٹ کی بنیادی باتیں",
-    networking:"نیٹ ورکنگ",
-    networkingTutorial:"نیٹ ورکنگ کی بنیادی باتیں",
-    cybersecurity:"سائبر سکیورٹی",
-    cybersecurityTutorial:"سائبر سکیورٹی آگاہی",
-    troubleshooting:"مسائل کا حل",
-    troubleshootingTutorial:"کمپیوٹر کے مسائل حل کرنا",
-    watchTutorial:"سبق دیکھیں ←",
-    reportModule:"رپورٹنگ ماڈیول / 03",
+    selectTutorial:"سبق منتخب کریں",videoPlaceholder:"نیچے دی گئی گیلری سے ویڈیو منتخب کریں۔",
+    videoPlayer:"ویڈیو پلیئر",chooseVideo:"سیکھنے کے لیے کوئی سبق منتخب کریں۔",
+    tutorialLibrary:"اسباق کی لائبریری",learningVideos:"تعلیمی ویڈیوز",
+    itSupport:"آئی ٹی سپورٹ",itSupportTutorial:"آئی ٹی سپورٹ کی بنیادی باتیں",
+    networking:"نیٹ ورکنگ",networkingTutorial:"نیٹ ورکنگ کی بنیادی باتیں",
+    cybersecurity:"سائبر سکیورٹی",cybersecurityTutorial:"سائبر سکیورٹی آگاہی",
+    troubleshooting:"مسائل کا حل",troubleshootingTutorial:"کمپیوٹر کے مسائل حل کرنا",
+    watchTutorial:"سبق دیکھیں ←",reportModule:"رپورٹنگ ماڈیول / 03",
     reportsDescription:"محفوظ شدہ تجزیے دیکھیں اور اپنے ریکارڈ برآمد کریں۔",
-    savedRecords:"محفوظ ریکارڈ",
-    analysisHistory:"تجزیے کی تاریخ",
-    exportCsv:"↓ CSV برآمد کریں",
-    date:"تاریخ",
-    workflow:"ورک فلو",
-    risk:"خطرہ",
-    priority:"ترجیح",
-    noReports:"ابھی کوئی رپورٹ موجود نہیں",
+    savedRecords:"محفوظ ریکارڈ",analysisHistory:"تجزیے کی تاریخ",
+    exportCsv:"↓ CSV برآمد کریں",date:"تاریخ",workflow:"ورک فلو",
+    risk:"خطرہ",priority:"ترجیح",noReports:"ابھی کوئی رپورٹ موجود نہیں",
     noReportsDescription:"آپ کے ورک فلو کے تجزیے یہاں دکھائی دیں گے۔",
-    createFirstReport:"پہلی رپورٹ بنائیں",
-    riskModule:"سکیورٹی ماڈیول / 04",
+    createFirstReport:"پہلی رپورٹ بنائیں",riskModule:"سکیورٹی ماڈیول / 04",
     riskDescription:"اپنے ورک فلو کے تجزیوں میں شناخت کیے گئے خطرات کی نگرانی کریں۔",
-    highRisk:"زیادہ خطرہ",
-    mediumRisk:"درمیانہ خطرہ",
-    lowRisk:"کم خطرہ",
-    monitoringLog:"نگرانی کا ریکارڈ",
-    riskActivity:"خطرات کی سرگرمیاں",
-    recordBased:"ریکارڈ کی بنیاد پر",
-    noRiskRecords:"خطرے کا کوئی ریکارڈ نہیں",
+    highRisk:"زیادہ خطرہ",mediumRisk:"درمیانہ خطرہ",lowRisk:"کم خطرہ",
+    monitoringLog:"نگرانی کا ریکارڈ",riskActivity:"خطرات کی سرگرمیاں",
+    recordBased:"ریکارڈ کی بنیاد پر",noRiskRecords:"خطرے کا کوئی ریکارڈ نہیں",
     noRiskDescription:"خطرات کی نگرانی کے لیے کسی ورک فلو کا تجزیہ کریں۔",
-    prototypeNotice:"پورٹ فولیو پروٹوٹائپ",
-    hybrid:"مشترکہ ورک فلو",
-    aiCategory:"اے آئی ورک فلو",
-    automationCategory:"آٹومیشن ورک فلو",
-    itCategory:"آئی ٹی سپورٹ",
-    generalCategory:"عمومی ورک فلو",
-    high:"زیادہ",
-    medium:"درمیانہ",
-    low:"کم",
-    urgent:"فوری",
-    attention:"توجہ درکار",
-    normal:"معمول",
+    prototypeNotice:"پورٹ فولیو پروٹوٹائپ",hybrid:"مشترکہ ورک فلو",
+    aiCategory:"اے آئی ورک فلو",automationCategory:"آٹومیشن ورک فلو",
+    itCategory:"آئی ٹی سپورٹ",generalCategory:"عمومی ورک فلو",
+    high:"زیادہ",medium:"درمیانہ",low:"کم",urgent:"فوری",
+    attention:"توجہ درکار",normal:"معمول",
     recommendationHigh:"زیادہ عملی خطرات کے اشارے ملے ہیں۔ آگے بڑھنے سے پہلے سکیورٹی، رسائی کی اجازتوں اور طریقہ کار کا جائزہ لیں۔",
     recommendationMedium:"ممکنہ عملی یا ڈیٹا کے خطرات کی نشاندہی ہوئی ہے۔ طریقہ کار اور حفاظتی اقدامات کا جائزہ لیں۔",
     recommendationLow:"اس پروٹوٹائپ کو کوئی بڑا خطرہ نظر نہیں آیا۔ معمول کی نگرانی جاری رکھیں۔",
@@ -241,7 +139,7 @@ const translations = {
     videoError:"یہ ویڈیو لوڈ نہیں ہو سکی۔ کوئی دوسری ویڈیو منتخب کریں۔",
     localMode:"مقامی قواعد پر مبنی تجزیہ",
     backendMissing:"Gemini AI بیک اینڈ منسلک نہیں ہے۔ یہ نتیجہ مقامی قواعد پر مبنی ہے، حقیقی AI ماڈل پر نہیں۔",
-    aiLoading:"Gemini AI آپ کے ورک فلو کا تجزیہ کر رہا ہے۔ براہ کرم انتظار کریں...",
+    aiLoading:"Gemini AI آپ کے ورک فلو کا تجزیہ کر رہا ہے۔ براہ کرم انتظار کریں۔",
     aiError:"Gemini تجزیہ مکمل نہیں کر سکا۔ مقامی قواعد پر مبنی نتائج دستیاب ہیں۔ خرابی: "
   }
 };
@@ -255,15 +153,12 @@ function t(key) {
 
 function applyLanguage(lang) {
   currentLanguage = lang === "ur" ? "ur" : "en";
-
   document.documentElement.lang = currentLanguage;
   document.documentElement.dir = currentLanguage === "ur" ? "rtl" : "ltr";
 
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.dataset.i18n;
-    if (translations[currentLanguage][key]) {
-      el.textContent = t(key);
-    }
+    if (translations[currentLanguage][key]) el.textContent = t(key);
   });
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
@@ -276,14 +171,10 @@ function applyLanguage(lang) {
 
   const activeVideo = document.querySelector(".video-card.selected");
   if (activeVideo) {
-    $("videoTitle").textContent =
-      currentLanguage === "ur"
-        ? activeVideo.dataset.titleUr
-        : activeVideo.dataset.title;
-    $("videoDescription").textContent =
-      currentLanguage === "ur"
-        ? activeVideo.dataset.descriptionUr
-        : activeVideo.dataset.description;
+    $("videoTitle").textContent = currentLanguage === "ur"
+      ? activeVideo.dataset.titleUr : activeVideo.dataset.title;
+    $("videoDescription").textContent = currentLanguage === "ur"
+      ? activeVideo.dataset.descriptionUr : activeVideo.dataset.description;
   }
 }
 
@@ -300,14 +191,10 @@ function showPage(page) {
   const target = $(page);
   if (!target) return;
 
-  document.querySelectorAll(".page").forEach(el => {
-    el.classList.remove("active");
-  });
-
+  document.querySelectorAll(".page").forEach(el => el.classList.remove("active"));
   document.querySelectorAll(".nav").forEach(el => {
     el.classList.toggle("active", el.dataset.page === page);
   });
-
   target.classList.add("active");
 
   if (page === "dashboard") updateDashboard();
@@ -347,12 +234,10 @@ const mediumWords = [
 function evaluateWorkflow(text) {
   const aiCount = countMatches(text, aiWords);
   const autoCount = countMatches(text, autoWords);
-
   const highCount = highWords.filter(word => text.toLowerCase().includes(word)).length;
   const mediumCount = mediumWords.filter(word => text.toLowerCase().includes(word)).length;
 
   let category = "GENERAL WORKFLOW";
-
   if (aiCount && autoCount) category = "HYBRID WORKFLOW";
   else if (aiCount) category = "AI WORKFLOW";
   else if (autoCount) category = "AUTOMATION WORKFLOW";
@@ -368,19 +253,11 @@ function evaluateWorkflow(text) {
   if (risk === "HIGH") priority = "URGENT";
   else if (risk === "MEDIUM") priority = "ATTENTION REQUIRED";
 
-  let recommendation = "No major risk indicators detected by this prototype. Continue routine monitoring.";
+  let recommendation = t("recommendationLow");
   if (risk === "HIGH") recommendation = t("recommendationHigh");
-  if (risk === "MEDIUM") recommendation = t("recommendationMedium");
-  if (risk === "LOW") recommendation = t("recommendationLow");
+  else if (risk === "MEDIUM") recommendation = t("recommendationMedium");
 
-  return {
-    category,
-    risk,
-    aiCount,
-    autoCount,
-    priority,
-    recommendation
-  };
+  return { category, risk, aiCount, autoCount, priority, recommendation };
 }
 
 function displayCategory(category) {
@@ -395,7 +272,7 @@ function displayCategory(category) {
 }
 
 function displayRisk(risk) {
-  return t(risk.toLowerCase());
+  return t((risk || "LOW").toLowerCase());
 }
 
 function displayPriority(priority) {
@@ -409,24 +286,20 @@ function displayPriority(priority) {
 
 function runAnalysis() {
   const text = $("workflowInput").value.trim();
-
   if (!text) {
     alert(t("emptyInput"));
     return;
   }
 
   if (analysisTimer) clearInterval(analysisTimer);
-
   $("analysisResult").hidden = true;
   $("processingBox").hidden = false;
-
   let progress = 0;
   $("analysisProgress").style.width = "0%";
 
   analysisTimer = setInterval(() => {
     progress += 10;
     $("analysisProgress").style.width = progress + "%";
-
     if (progress >= 100) {
       clearInterval(analysisTimer);
       analysisTimer = null;
@@ -437,7 +310,6 @@ function runAnalysis() {
 
 function finishAnalysis(text) {
   const result = evaluateWorkflow(text);
-
   const record = {
     id: Date.now(),
     date: new Date().toLocaleString(),
@@ -452,7 +324,6 @@ function finishAnalysis(text) {
 
   $("processingBox").hidden = true;
   $("analysisResult").hidden = false;
-
   $("categoryResult").textContent = displayCategory(result.category);
   $("riskResult").textContent = displayRisk(result.risk);
   $("aiMatches").textContent = result.aiCount;
@@ -471,9 +342,8 @@ function finishAnalysis(text) {
   requestGeminiInsight(text, record.id);
 }
 
-
-// Formats Gemini Markdown output into readable HTML elements.
-(markdown) {
+// Safely formats Gemini Markdown into readable HTML.
+function renderAIInsight(markdown) {
   const container = $("aiResponseText");
   if (!container) return;
 
@@ -485,8 +355,10 @@ function finishAnalysis(text) {
 
   const normalized = String(markdown || "")
     .replace(/\r/g, "")
-    .replace(/[ \t]*---+[ \t]*/g, "\n")
-    .replace(/[ \t]+(#{1,3}\s)/g, "\n$1")
+    .replace(/\\(?=#{1,6})/g, "")
+    .replace(/^[ \t]*#{1,6}[ \t]*$/gm, "")
+    .replace(/^[ \t]*---+[ \t]*$/gm, "")
+    .replace(/[ \t]+(#{1,6}\s)/g, "\n$1")
     .replace(/[ \t]+([*•-]\s)/g, "\n$1")
     .replace(/[ \t]+(\d+[.)]\s)/g, "\n$1")
     .trim();
@@ -496,7 +368,6 @@ function finishAnalysis(text) {
 
   function addInline(parent, value) {
     const parts = value.split(/(\*\*.*?\*\*)/g);
-
     parts.forEach(part => {
       if (part.startsWith("**") && part.endsWith("**")) {
         const strong = document.createElement("strong");
@@ -515,7 +386,7 @@ function finishAnalysis(text) {
       return;
     }
 
-    const heading = line.match(/^#{1,3}\s+(.+)/);
+    const heading = line.match(/^#{1,6}\s+(.+)/);
     if (heading) {
       list = null;
       const h = document.createElement("h3");
@@ -527,10 +398,10 @@ function finishAnalysis(text) {
       return;
     }
 
-    const bullet = line.match(/^[*•-]\s+(.+)/);
     const numbered = line.match(/^\d+[.)]\s+(.+)/);
+    const bullet = line.match(/^[-*•]\s+(.+)/);
 
-    if (bullet || numbered) {
+    if (numbered || bullet) {
       const type = numbered ? "ol" : "ul";
       if (!list || list.tagName.toLowerCase() !== type) {
         list = document.createElement(type);
@@ -540,7 +411,7 @@ function finishAnalysis(text) {
       }
 
       const li = document.createElement("li");
-      addInline(li, (bullet || numbered)[1]);
+      addInline(li, (numbered || bullet)[1]);
       li.style.marginBottom = "7px";
       list.appendChild(li);
       return;
@@ -558,21 +429,14 @@ async function requestGeminiInsight(workflow, recordId) {
   try {
     const response = await fetch(AI_API_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        workflow,
-        language: currentLanguage
-      })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ workflow, language: currentLanguage })
     });
 
     const data = await response.json();
 
     if (!response.ok || !data.success || !data.insight) {
-      throw new Error(
-        data.details || data.error || ("HTTP " + response.status)
-      );
+      throw new Error(data.details || data.error || ("HTTP " + response.status));
     }
 
     const record = records.find(item => item.id === recordId);
@@ -581,20 +445,17 @@ async function requestGeminiInsight(workflow, recordId) {
       saveRecords();
     }
 
-    function function (data.insight);
+    renderAIInsight(data.insight);
 
   } catch (error) {
     console.error("Gemini connection error:", error);
-    const message = currentLanguage === "ur"
-      ? t("aiError") + (error.message || "نامعلوم خرابی")
-      : t("aiError") + (error.message || "Unknown error");
+    const message = t("aiError") + (error.message || "Unknown error");
     $("aiResponseText").textContent = message;
   }
 }
 
 function updateDashboard() {
   $("totalStat").textContent = records.length;
-
   $("aiStat").textContent = records.filter(r => Number(r.aiCount) > 0).length;
   $("autoStat").textContent = records.filter(r => Number(r.autoCount) > 0).length;
   $("highStat").textContent = records.filter(r => r.risk === "HIGH").length;
@@ -603,7 +464,6 @@ function updateDashboard() {
 function updateReports() {
   const body = $("reportsBody");
   const empty = $("emptyReports");
-
   if (!body || !empty) return;
 
   body.replaceChildren();
@@ -611,7 +471,6 @@ function updateReports() {
 
   records.forEach(record => {
     const tr = document.createElement("tr");
-
     const values = [
       record.date || "",
       (record.text || "").slice(0, 65),
@@ -625,7 +484,6 @@ function updateReports() {
       td.textContent = value;
       tr.appendChild(td);
     });
-
     body.appendChild(tr);
   });
 }
@@ -633,7 +491,6 @@ function updateReports() {
 function updateRisks() {
   const list = $("riskList");
   const empty = $("emptyRisks");
-
   if (!list || !empty) return;
 
   list.replaceChildren();
@@ -645,7 +502,6 @@ function updateRisks() {
   $("riskHigh").textContent = high;
   $("riskMedium").textContent = medium;
   $("riskLow").textContent = low;
-
   empty.hidden = records.length > 0;
 
   records.forEach(record => {
@@ -658,7 +514,6 @@ function updateRisks() {
 
     const date = document.createElement("p");
     date.textContent = record.date || "";
-
     info.append(title, date);
 
     const badge = document.createElement("span");
@@ -676,10 +531,14 @@ function exportCSV() {
     return;
   }
 
-  const headings = ["Date", "Workflow", "Category", "Risk", "AI Matches", "Automation Matches", "Priority"];
+  const headings = [
+    "Date", "Workflow", "Category", "Risk",
+    "AI Matches", "Automation Matches", "Priority"
+  ];
 
   const rows = records.map(r => [
-    r.date, r.text, r.category, r.risk, r.aiCount, r.autoCount, r.priority
+    r.date, r.text, r.category, r.risk,
+    r.aiCount, r.autoCount, r.priority
   ]);
 
   const csv = [headings, ...rows]
@@ -694,18 +553,16 @@ function exportCSV() {
 
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
-
   link.href = url;
   link.download = "NEUROCORE_Reports.csv";
   link.click();
-
   URL.revokeObjectURL(url);
 }
 
 function loadVideo(videoId, title, description, titleUr, descriptionUr, card) {
   const screen = $("videoScreen");
-
   const iframe = document.createElement("iframe");
+
   iframe.src = "https://www.youtube-nocookie.com/embed/" +
     encodeURIComponent(videoId) + "?autoplay=1&rel=0";
   iframe.title = title;
@@ -721,7 +578,6 @@ function loadVideo(videoId, title, description, titleUr, descriptionUr, card) {
   document.querySelectorAll(".video-card").forEach(el => {
     el.classList.remove("selected");
   });
-
   if (card) card.classList.add("selected");
 }
 
