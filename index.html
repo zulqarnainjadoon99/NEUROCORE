@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEUROCORE | Intelligence Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-symbol">N</div>
+      <div>
+        <h2>NEUROCORE</h2>
+        <small data-i18n="subtitle">INTELLIGENCE ENGINE</small>
+      </div>
+    </div>
+
+    <div class="sidebar-status">
+      <span class="status-dot"></span>
+      <span data-i18n="systemOnline">SYSTEM ONLINE</span>
+      <small>V5.0</small>
+    </div>
+
+    <p class="menu-heading" data-i18n="mainMenu">MAIN MENU</p>
+
+    <nav class="sidebar-nav">
+      <button class="nav active" data-page="dashboard">
+        <span>▦</span><span data-i18n="dashboard">Dashboard</span>
+      </button>
+      <button class="nav" data-page="analysis">
+        <span>◈</span><span data-i18n="workflowAnalysis">Workflow Analysis</span>
+      </button>
+      <button class="nav" data-page="videos">
+        <span>▶</span><span data-i18n="videoCenter">IT Video Center</span>
+      </button>
+      <button class="nav" data-page="reports">
+        <span>▤</span><span data-i18n="reports">Reports</span>
+      </button>
+      <button class="nav" data-page="risks">
+        <span>◎</span><span data-i18n="riskMonitoring">Risk Monitoring</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="engine-indicator"></div>
+      <span data-i18n="engineActive">ENGINE ACTIVE</span>
+      <small>NEUROCORE © 2026</small>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+      <div>
+        <p class="eyebrow" data-i18n="workspace">INTELLIGENCE WORKSPACE</p>
+        <h1 data-i18n="overview">Overview</h1>
+      </div>
+
+      <div class="topbar-actions">
+        <span class="live-indicator">
+          <span class="status-dot"></span>
+          <span data-i18n="liveSystem">LIVE SYSTEM</span>
+        </span>
+
+        <select id="languageSelect" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="ur">اردو</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- DASHBOARD -->
+    <section class="page active" id="dashboard">
+
+      <div class="hero-panel">
+        <div class="hero-content">
+          <span class="hero-tag" data-i18n="intelligencePlatform">
+            WORKFLOW INTELLIGENCE PLATFORM
+          </span>
+          <h2 data-i18n="heroTitle">Understand. Analyze. Optimize.</h2>
+          <p data-i18n="heroDescription">
+            Analyze operational workflows, identify risks and discover opportunities for smarter work.
+          </p>
+          <button class="primary-btn" data-go="analysis" data-i18n="startAnalysis">
+            Start Workflow Analysis →
+          </button>
+        </div>
+
+        <div class="neural-visual" aria-label="Animated intelligence visualization">
+          <div class="neural-orbit orbit-one"></div>
+          <div class="neural-orbit orbit-two"></div>
+          <div class="neural-core">
+            <span>N</span>
+          </div>
+          <div class="neural-node node-one"></div>
+          <div class="neural-node node-two"></div>
+          <div class="neural-node node-three"></div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="systemOverview">SYSTEM OVERVIEW</p>
+          <h2 data-i18n="performanceMetrics">Performance Metrics</h2>
+        </div>
+        <span class="live-label" data-i18n="updatedLive">● UPDATED LIVE</span>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-icon">▦</span>
+          <p data-i18n="totalAnalyses">Total Analyses</p>
+          <h3 id="totalStat">0</h3>
+          <small data-i18n="allRecords">All saved records</small>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">◈</span>
+          <p data-i18n="aiAssistedTasks">AI-Assisted Tasks</p>
+          <h3 id="aiStat">0</h3>
+          <small data-i18n="aiRelatedMatches">AI-related matches</small>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">⚙</span>
+          <p data-i18n="automationTasks">Automation Tasks</p>
+          <h3 id="autoStat">0</h3>
+          <small data-i18n="automationMatches">Automation-related matches</small>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">◎</span>
+          <p data-i18n="highRiskTasks">High Risk Tasks</p>
+          <h3 id="highStat">0</h3>
+          <small data-i18n="riskDetected">High-risk records</small>
+        </article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="content-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow" data-i18n="quickAction">QUICK ACTION</p>
+              <h3 data-i18n="analyzeWorkflow">Analyze a Workflow</h3>
+            </div>
+            <span>◈</span>
+          </div>
+          <p data-i18n="quickActionDescription">
+            Submit a work process to evaluate its category, risk level and improvement opportunities.
+          </p>
+          <button class="secondary-btn" data-go="analysis" data-i18n="openAnalyzer">
+            Open Analyzer →
+          </button>
+        </article>
+
+        <article class="content-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow" data-i18n="learningHub">LEARNING HUB</p>
+              <h3 data-i18n="itLearningCenter">IT Learning Center</h3>
+            </div>
+            <span>▶</span>
+          </div>
+          <p data-i18n="learningDescription">
+            Explore IT support, networking, cybersecurity and technology tutorials.
+          </p>
+          <button class="secondary-btn" data-go="videos" data-i18n="exploreVideos">
+            Explore Videos →
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- WORKFLOW ANALYSIS -->
+    <section class="page" id="analysis">
+      <div class="page-heading">
+        <p class="eyebrow" data-i18n="analysisModule">INTELLIGENCE MODULE / 01</p>
+        <h2 data-i18n="workflowAnalysis">Workflow Analysis</h2>
+        <p data-i18n="analysisDescription">
+          Describe a workflow to analyze its operations, risks and improvement opportunities.
+        </p>
+      </div>
+
+      <div class="content-card analysis-card">
+        <label for="workflowInput" data-i18n="workflowDescription">
+          Describe Your Workflow
+        </label>
+
+        <textarea id="workflowInput" rows="6"
+          data-i18n-placeholder="workflowPlaceholder"
+          placeholder="Example: Our IT department receives support requests through email..."></textarea>
+
+        <div class="analysis-actions">
+          <button class="primary-btn" id="analyzeBtn" data-i18n="analyzeWorkflowBtn">
+            ◈ Analyze Workflow
+          </button>
+          <button class="secondary-btn" id="sampleBtn" data-i18n="loadSample">
+            Load Sample
+          </button>
+          <button class="text-btn" id="clearBtn" data-i18n="clear">
+            Clear
+          </button>
+        </div>
+
+        <div id="processingBox" class="processing-box" hidden>
+          <div class="processing-line"></div>
+          <p data-i18n="processing">Analyzing workflow...</p>
+          <div class="progress-track">
+            <div id="analysisProgress" class="progress-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="analysisResult" class="content-card result-card" hidden>
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow" data-i18n="analysisOutput">ANALYSIS OUTPUT</p>
+            <h3 data-i18n="intelligenceReport">Intelligence Report</h3>
+          </div>
+          <span class="result-status" data-i18n="completed">COMPLETED</span>
+        </div>
+
+        <div class="result-grid">
+          <div class="result-item">
+            <small data-i18n="category">CATEGORY</small>
+            <strong id="categoryResult">—</strong>
+          </div>
+          <div class="result-item">
+            <small data-i18n="riskLevel">RISK LEVEL</small>
+            <strong id="riskResult">—</strong>
+          </div>
+          <div class="result-item">
+            <small data-i18n="aiMatches">AI MATCHES</small>
+            <strong id="aiMatches">0</strong>
+          </div>
+          <div class="result-item">
+            <small data-i18n="automationMatches">AUTOMATION MATCHES</small>
+            <strong id="autoMatches">0</strong>
+          </div>
+          <div class="result-item">
+            <small data-i18n="executionPriority">EXECUTION PRIORITY</small>
+            <strong id="priorityResult">—</strong>
+          </div>
+        </div>
+
+        <div class="recommendation-panel">
+          <h4 data-i18n="recommendations">Recommendations</h4>
+          <p id="recommendationResult">—</p>
+        </div>
+
+        <div id="aiResponse" class="ai-response" hidden>
+          <h4 data-i18n="aiInsights">AI Insights</h4>
+          <div id="aiResponseText"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO CENTER -->
+    <section class="page" id="videos">
+      <div class="page-heading">
+        <p class="eyebrow" data-i18n="learningModule">LEARNING MODULE / 02</p>
+        <h2 data-i18n="videoCenter">IT Video Center</h2>
+        <p data-i18n="videoDescription">
+          Learn practical IT skills through selected video tutorials.
+        </p>
+      </div>
+
+      <div class="video-layout">
+        <div class="video-player-card">
+          <div id="videoScreen" class="video-screen">
+            <div class="video-placeholder">
+              <span class="play-symbol">▶</span>
+              <h3 data-i18n="selectTutorial">Select a Tutorial</h3>
+              <p data-i18n="videoPlaceholder">
+                Choose a learning video from the gallery below.
+              </p>
+            </div>
+          </div>
+          <div class="video-player-info">
+            <h3 id="videoTitle" data-i18n="videoPlayer">Video Player</h3>
+            <p id="videoDescription" data-i18n="chooseVideo">
+              Choose a tutorial to start learning.
+            </p>
+          </div>
+        </div>
+
+        <div class="video-gallery">
+          <div class="section-heading">
+            <h3 data-i18n="tutorialLibrary">Tutorial Library</h3>
+            <span data-i18n="learningVideos">LEARNING VIDEOS</span>
+          </div>
+
+          <div class="video-grid">
+
+            <button class="video-card" data-video="inWWhr5tnEA"
+              data-title="IT Support Fundamentals"
+              data-description="Introduction to IT support and troubleshooting."
+              data-title-ur="آئی ٹی سپورٹ کی بنیادی باتیں"
+              data-description-ur="آئی ٹی سپورٹ اور خرابیوں کی نشاندہی کا تعارف۔">
+              <div class="video-thumb thumb-one"><span>▶</span></div>
+              <div class="video-card-info">
+                <small data-i18n="itSupport">IT SUPPORT</small>
+                <h4 data-i18n="itSupportTutorial">IT Support Fundamentals</h4>
+                <p data-i18n="watchTutorial">Watch Tutorial →</p>
+              </div>
+            </button>
+
+            <button class="video-card" data-video="qiQR5rTSshw"
+              data-title="Networking Basics"
+              data-description="Learn the foundations of computer networking."
+              data-title-ur="نیٹ ورکنگ کی بنیادی باتیں"
+              data-description-ur="کمپیوٹر نیٹ ورکنگ کی بنیادی معلومات سیکھیں۔">
+              <div class="video-thumb thumb-two"><span>▶</span></div>
+              <div class="video-card-info">
+                <small data-i18n="networking">NETWORKING</small>
+                <h4 data-i18n="networkingTutorial">Networking Basics</h4>
+                <p data-i18n="watchTutorial">Watch Tutorial →</p>
+              </div>
+            </button>
+
+            <button class="video-card" data-video="inWWhr5tnEA"
+              data-title="Cybersecurity Awareness"
+              data-description="Understand basic cybersecurity practices."
+              data-title-ur="سائبر سکیورٹی آگاہی"
+              data-description-ur="سائبر سکیورٹی کے بنیادی اصول سمجھیں۔">
+              <div class="video-thumb thumb-three"><span>▶</span></div>
+              <div class="video-card-info">
+                <small data-i18n="cybersecurity">CYBERSECURITY</small>
+                <h4 data-i18n="cybersecurityTutorial">Cybersecurity Awareness</h4>
+                <p data-i18n="watchTutorial">Watch Tutorial →</p>
+              </div>
+            </button>
+
+            <button class="video-card" data-video="qiQR5rTSshw"
+              data-title="Computer Troubleshooting"
+              data-description="Learn a structured troubleshooting approach."
+              data-title-ur="کمپیوٹر ٹربل شوٹنگ"
+              data-description-ur="کمپیوٹر کے مسائل حل کرنے کا طریقہ سیکھیں۔">
+              <div class="video-thumb thumb-four"><span>▶</span></div>
+              <div class="video-card-info">
+                <small data-i18n="troubleshooting">TROUBLESHOOTING</small>
+                <h4 data-i18n="troubleshootingTutorial">Computer Troubleshooting</h4>
+                <p data-i18n="watchTutorial">Watch Tutorial →</p>
+              </div>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPORTS -->
+    <section class="page" id="reports">
+      <div class="page-heading">
+        <p class="eyebrow" data-i18n="reportModule">REPORTING MODULE / 03</p>
+        <h2 data-i18n="reports">Reports</h2>
+        <p data-i18n="reportsDescription">
+          Review saved workflow analyses and export your records.
+        </p>
+      </div>
+
+      <div class="content-card">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow" data-i18n="savedRecords">SAVED RECORDS</p>
+            <h3 data-i18n="analysisHistory">Analysis History</h3>
+          </div>
+          <button class="primary-btn" id="exportBtn" data-i18n="exportCsv">
+            ↓ Export CSV
+          </button>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="reports-table">
+            <thead>
+              <tr>
+                <th data-i18n="date">DATE</th>
+                <th data-i18n="workflow">WORKFLOW</th>
+                <th data-i18n="category">CATEGORY</th>
+                <th data-i18n="risk">RISK</th>
+                <th data-i18n="priority">PRIORITY</th>
+              </tr>
+            </thead>
+            <tbody id="reportsBody"></tbody>
+          </table>
+        </div>
+
+        <div id="emptyReports" class="empty-state" hidden>
+          <span>▤</span>
+          <h3 data-i18n="noReports">No Reports Yet</h3>
+          <p data-i18n="noReportsDescription">
+            Your workflow analysis records will appear here.
+          </p>
+          <button class="secondary-btn" data-go="analysis" data-i18n="createFirstReport">
+            Create Your First Report
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RISK MONITORING -->
+    <section class="page" id="risks">
+      <div class="page-heading">
+        <p class="eyebrow" data-i18n="riskModule">SECURITY MODULE / 04</p>
+        <h2 data-i18n="riskMonitoring">Risk Monitoring</h2>
+        <p data-i18n="riskDescription">
+          Monitor risk levels identified in your workflow analysis records.
+        </p>
+      </div>
+
+      <div class="risk-stats-grid">
+        <article class="risk-stat high-risk">
+          <span data-i18n="highRisk">HIGH RISK</span>
+          <h3 id="riskHigh">0</h3>
+        </article>
+        <article class="risk-stat medium-risk">
+          <span data-i18n="mediumRisk">MEDIUM RISK</span>
+          <h3 id="riskMedium">0</h3>
+        </article>
+        <article class="risk-stat low-risk">
+          <span data-i18n="lowRisk">LOW RISK</span>
+          <h3 id="riskLow">0</h3>
+        </article>
+      </div>
+
+      <div class="content-card">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow" data-i18n="monitoringLog">MONITORING LOG</p>
+            <h3 data-i18n="riskActivity">Risk Activity</h3>
+          </div>
+          <span class="live-label" data-i18n="recordBased">RECORD BASED</span>
+        </div>
+
+        <div id="riskList" class="risk-list"></div>
+
+        <div id="emptyRisks" class="empty-state" hidden>
+          <span>◎</span>
+          <h3 data-i18n="noRiskRecords">No Risk Records</h3>
+          <p data-i18n="noRiskDescription">
+            Analyze a workflow to populate risk monitoring.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <span>NEUROCORE INTELLIGENCE ENGINE © 2026</span>
+      <span data-i18n="prototypeNotice">PORTFOLIO PROTOTYPE</span>
+    </footer>
+
+  </main>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
