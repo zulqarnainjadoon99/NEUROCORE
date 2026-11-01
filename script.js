@@ -581,7 +581,7 @@ async function requestGeminiInsight(workflow, recordId) {
       saveRecords();
     }
 
-    renderAIInsight(data.insight);
+    function function function renderAIInsight(data.insight);
 
   } catch (error) {
     console.error("Gemini connection error:", error);
