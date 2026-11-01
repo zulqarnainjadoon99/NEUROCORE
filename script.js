@@ -473,7 +473,7 @@ function finishAnalysis(text) {
 
 
 // Formats Gemini Markdown output into readable HTML elements.
-function renderAIInsight(markdown) {
+(markdown) {
   const container = $("aiResponseText");
   if (!container) return;
 
@@ -581,7 +581,7 @@ async function requestGeminiInsight(workflow, recordId) {
       saveRecords();
     }
 
-    function function function renderAIInsight(data.insight);
+    function function (data.insight);
 
   } catch (error) {
     console.error("Gemini connection error:", error);
